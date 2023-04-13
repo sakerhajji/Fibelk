@@ -143,12 +143,12 @@
 					</span>
 				</li>
 				<li>
-					<a href="https://www.google.com/" ></a>
+					<a href="ajoutpiece.php" >
 					<i class='bx bxs-dollar-circle' ></i>
 				</a>
 					<span class="text">
 						<h3>theatre Event</h3>
-						<p>click pour Ajouter</p>
+						<p>click pour Ajouter un Evenement</p>
 					</span>
 				</li>
 				<li>
