@@ -127,13 +127,13 @@
 					<i class='bx bxs-calendar-check' ></i>
 				</a>
 					<span class="text">
-						<h3>cenima evnt</h3>
+						<h3>cinéma evnt</h3>
 						<p>click pour Ajouter</p>
 					</span>
 					 
 				</li>
 				<li>
-					<a href="https://www.google.com/" >
+					<a href="afficherlc.php" >
 					
 					<i class='bx bxs-group' ></i>
 				</a>
