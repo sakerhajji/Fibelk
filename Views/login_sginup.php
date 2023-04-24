@@ -16,13 +16,14 @@
 		<form  method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
 			<h1>Create Account</h1>
 			<img src="./img/ll1.png" alt="logo">
-			<input type="text" placeholder="Nom"  name="nom" />
-			<input type="text" placeholder="Prenom" name="prenom" />
-			<input type="email" placeholder="Email" name="email" />
-            <input type="date" placeholder="Date de naissance" name="date" />
-			<input type="password" placeholder="Mot de passe  " name="pass"  />
-			<input type="password" placeholder="confirmer le Mot de passe" name=""  />
-			<button>Sign Up</button>
+			<input type="text" placeholder="Nom"  name="nom" id="nom"/>
+			<input type="text" placeholder="Prenom" name="prenom" id="prenom" />
+			<input type="email" placeholder="Email" name="email" id="email" />
+            <input type="date" placeholder="Date de naissance" name="date" id="date" />
+			<input type="password" placeholder="Mot de passe  " name="pass" id="pass" />
+			<input type="password" placeholder="confirmer le Mot de passe" name="cpass" id="cpass"  />
+
+			<button id="singup">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">

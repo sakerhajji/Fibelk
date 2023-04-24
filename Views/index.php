@@ -1,8 +1,4 @@
-<?php
-include '../Controller/userc.php';
-$userc = new Userc();
-$list = $userc->listusers();
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +7,8 @@ $list = $userc->listusers();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Boxicons -->
-	<link rel="shortcut icon " type="x-icon" href="/img/icon.png>
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+	<link rel="shortcut icon " type="x-icon" href="img/icon.png" >
+	<link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 	
@@ -21,6 +16,13 @@ $list = $userc->listusers();
 	<title>Fibelk</title>
 </head>
 <body>
+<?php
+include '../Controller/userc.php';
+$userc = new Userc();
+$admin = new Userc();
+$list = $userc->listusers();
+$list1 = $admin->listAdmin();
+?>
 
 
 	<!-- SIDEBAR -->
@@ -166,6 +168,7 @@ $list = $userc->listusers();
 								<th>Email</th>
 								<th>date de naissance</th>
 								<th>password</th>
+								<th>role</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -179,11 +182,16 @@ $list = $userc->listusers();
 									<td><?= $user['email']; ?></td>
 									<td><?= $user['date']; ?></td>
 									<td><?= $user['pass']; ?></td>
+									<td><?= $user['role']; ?></td>
+
 									<td>
-									<a href="update.php?idAC=<?= $user['idAC']; ?>" ><span class="status completed">Update</span> </a>
+									<a href="Update_admin_user.php?idAC=<?= $user['idAC']; ?>" ><span class="status completed">Update</span> </a>
 									</td>
 									<td>
 									<a href="delete.php?idAC=<?= $user['idAC']; ?>"><span class="status pending">Delete</span> </a>
+									</td>
+									<td>
+									<a href="AddAdmin.php?idAC=<?= $user['idAC']; ?>" ><span class="status completed">add admin</span> </a>
 									</td>
 								</tr>
 							<?php
@@ -192,35 +200,55 @@ $list = $userc->listusers();
 							</tbody>
 					</table>
 				</div>
-				<div class="todo">
+			
+			</div>
+			
+			<div class="table-data">
+				<div class="order">
 					<div class="head">
-						<h3>à faire </h3>
-						<i class='bx bx-plus' ></i>
+						<h3>liste des admins </h3>
+						<i class='bx bx-search' ></i>
 						<i class='bx bx-filter' ></i>
 					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>à faire List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>à faire List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>à faire List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>à faire List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>à faire List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
+					<table>
+						<thead>
+							<tr>
+								<th>id user </th>
+								<th> Nom</th>
+								<th>Prenom</th>
+								<th>Email</th>
+								<th>date de naissance</th>
+								<th>password</th>
+								<th>role</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+							foreach ($list1 as $admin) {
+							?>
+								<tr>
+									<td><?= $admin['idAC']; ?></td>
+									<td><?= $admin['nom']; ?></td>
+									<td><?= $admin['prenom']; ?></td>
+									<td><?= $admin['email']; ?></td>
+									<td><?= $admin['date']; ?></td>
+									<td><?= $admin['pass']; ?></td>
+									<td><?= $admin['role']; ?></td>
+
+									<td>
+									<a href="Update_admin_user.php?idAC=<?= $admin['idAC']; ?>" ><span class="status completed">Update</span> </a>
+									</td>
+									<td>
+									<a href="DeleteAdmin.php?idAC=<?= $admin['idAC']; ?>"><span class="status pending">Delete Admin</span> </a>
+									
+								</tr>
+							<?php
+							}
+							?>
+							</tbody>
+					</table>
 				</div>
+			
 			</div>
 		</main>
 		<!-- MAIN -->

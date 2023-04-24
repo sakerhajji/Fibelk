@@ -9,13 +9,14 @@ class User
     private $RoleUser;
 
 
-    public function __construct($ln=null, $fn=null,$MailUser=null, $ad = null, $MotdepassUser = null)
+    public function __construct($ln=null, $fn=null,$MailUser=null, $ad = null, $MotdepassUser = null , $RoleUser=null)
     {
         $this->NomUser= $ln;
         $this->PrenomUser= $fn;
         $this->MailUser= $MailUser;
         $this->DateUser= $ad;
         $this->MotdepassUser= $MotdepassUser;
+        $this->RoleUser=$RoleUser ; 
     }
 
     

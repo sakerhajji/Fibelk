@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="style.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	
 	<!-- Boxicons -->
 	<link rel="shortcut icon " type="x-icon" href="img/icon.png" >
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
 	<!-- My CSS -->
-	<link rel="stylesheet" href="style.css">
+	
 
 	<title>Fibelk</title>
 </head>
@@ -123,9 +124,9 @@
 		
 			<ul class="box-info">
 				<li>
-					<a href="https://www.google.com/" >
-					<i class='bx bxs-calendar-check' ></i>
-				</a>
+					<button style=" background-color: transparent;  border: none;" onclick="showDivCenima()">
+						<i class='bx bxs-movie'></i>
+					</button>
 					<span class="text">
 						<h3>cenima evnt</h3>
 						<p>click pour Ajouter</p>
@@ -133,106 +134,308 @@
 					 
 				</li>
 				<li>
-					<a href="https://www.google.com/" >
+					<button style=" background-color: transparent;  border: none;" onclick="showDivSport()">
 					
-					<i class='bx bxs-group' ></i>
-				</a>
+						<i class='bx bx-football'></i>
+					</button>
 					<span class="text">
 						<h3>Sport Event  </h3>
 						<p>click pour Ajouter</p>
 					</span>
 				</li>
 				<li>
-					<a href="https://www.google.com/" ></a>
-					<i class='bx bxs-dollar-circle' ></i>
-				</a>
+					<button style=" background-color: transparent;  border: none;" onclick="showDivTheatre()">
+						<i class='bx bx-mask' ></i>
+					</button>
 					<span class="text">
 						<h3>theatre Event</h3>
 						<p>click pour Ajouter</p>
 					</span>
 				</li>
+				
+			</ul>
+
+			<ul class="box-info">
 				<li>
-					<i class='bx bxs-dollar-circle' ></i>
+					<button style=" background-color: transparent;  border: none;" onclick="showDivMusic()">
+						<i class='bx bx-music' ></i>
+						</button>
 					<span class="text">
 						<h3>Music Event</h3>
 						<p>click pour Ajouter</p>
 					</span>
 				</li>
 				<li>
-					<i class='bx bxs-dollar-circle' ></i>
+				<button style=" background-color: transparent;  border: none;" onclick="showDivBook()">
+					<i class='bx bx-book-open' ></i>
+					</button>
 					<span class="text">
 						<h3>littéraire Event</h3> 
 						<p>click pour Ajouter</p>
 					</span>
 				</li>
 			</ul>
+			
+			
 
-			<div class="table-data">
-				<div class="order">
-					<div class="head">
-						<h3>Recent Orders</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>User</th>
-								<th>Date Order</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+			<ul class="box-infos1" id="cinma_event" style="display:none;" >
+				<li>
+					<a href="https://www.google.com/" >
+						<i class='bx bxs-arch' ></i>
+				</a>
+					<span class="text">
+						<h3>place event</h3>
+						<p>click pour Ajouter</p>
+					</span>
+					 
+				</li>
+				<li>
+					<a href="https://www.google.com/" >
+					
+						<i class='bx bx-calendar-event' ></i>
+				</a>
+					<span class="text">
+						<h3> ajouter event deja existe </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+				<li>
+					<a href="https://www.google.com/" >
+						<i class='bx bxs-data' ></i>
+				</a>
+					<span class="text">
+						<h3>Ajouter event detailles </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+			
+			
+			</ul>
+			<ul class="box-infos1" id="sport_event" style="display:none;" > 
+				<li>
+					<a href="https://www.google.com/" >
+						<i class='bx bxs-arch' ></i>
+				</a>
+					<span class="text">
+						<h3>place event</h3>
+						<p>click pour Ajouter</p>
+					</span>
+					 
+				</li>
+				<li>
+					<a href="https://www.google.com/" >
+					
+						<i class='bx bx-calendar-event' ></i>
+				</a>
+					<span class="text">
+						<h3> ajouter event deja existe </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+				<li>
+					<a href="https://www.google.com/" >
+						<i class='bx bxs-data' ></i>
+				</a>
+					<span class="text">
+						<h3>Ajouter event detailles </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+			
+			
+			</ul>
+			<ul class="box-infos1" id="theatre_event" style="display:none;">
+				<li>
+					<a href="https://www.google.com/" >
+						<i class='bx bxs-arch' ></i>
+				</a>
+					<span class="text">
+						<h3>place event</h3>
+						<p>click pour Ajouter</p>
+					</span>
+					 
+				</li>
+				<li>
+					<a href="https://www.google.com/" >
+					
+						<i class='bx bx-calendar-event' ></i>
+				</a>
+					<span class="text">
+						<h3> ajouter event deja existe </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+				<li>
+					<a href="https://www.google.com/" >
+						<i class='bx bxs-data' ></i>
+				</a>
+					<span class="text">
+						<h3>Ajouter event detailles </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+			
+			
+			</ul>
+			<ul class="box-infos1" id="music_event" style="display:none;" >
+				<li>
+					<a href="https://www.google.com/" >
+						<i class='bx bxs-arch' ></i>
+				</a>
+					<span class="text">
+						<h3>place event</h3>
+						<p>click pour Ajouter</p>
+					</span>
+					 
+				</li>
+				<li>
+					<a href="https://www.google.com/" >
+					
+						<i class='bx bx-calendar-event' ></i>
+				</a>
+					<span class="text">
+						<h3> ajouter event deja existe </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+				<li>
+					<button style=" background-color: transparent;  border: none;" onclick="showFormConcer()">
+						<i class='bx bxs-data' ></i>
+					</button>
+					<span class="text">
+						<h3>Ajouter event detailles </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+			
+			
+			</ul>
+
+			<ul class="box-infos1" id="livre_event" style="display:none;">
+				<li>
+					<a href="https://www.google.com/" >
+						<i class='bx bxs-arch' ></i>
+				</a>
+					<span class="text">
+						<h3>place event</h3>
+						<p>click pour Ajouter</p>
+					</span>
+					 
+				</li>
+				<li>
+					<a href="https://www.google.com/" >
+					
+						<i class='bx bx-calendar-event' ></i>
+				</a>
+					<span class="text">
+						<h3> ajouter event deja existe </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+				<li>
+					<a href="https://www.google.com/" >
+						<i class='bx bxs-data' ></i>
+				</a>
+					<span class="text">
+						<h3>Ajouter event detailles </h3>
+						<p>click pour Ajouter</p>
+					</span>
+				</li>
+			
+			
+			</ul>
+
+			<div class="container" id="concert" style="display:none;" >
 				
-			</div>
+				<div class="card" id="pup">
+
+					<div class="text">formulaire à remplir</div>
+					<form action="#">
+					<div class="form-row">
+						<div class="input-data">
+							<input type="text" name="ID" id='ID' required>
+							<!--fi kol input hot name o id kima esemi base-->
+							<div class="underline"></div>
+							<label for="">ID lieu concert</label>
+						</div>
+						<div class="input-data">
+							<input type="text" name="nom" id='nom' required>
+							<div class="underline"></div>
+							<label for="">Nom lieu concert</label>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="input-data" id="input-dat">
+							<input type="text" name="adresse" id='adresse' required>
+							<div class="underline"></div>
+							<label for="">Adresse</label>
+						</div>
+						<div class="input-data">
+							<input type="number" name="capacite" id='capacite' required>
+							<div class="underline"></div>
+							<label for="">capacite</label>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="input-data">
+							
+							<input type="time" name="temp_o" id='temp_o' required   style="background-color: transparent;" >
+						   
+							<div class="underline"></div>
+							<label for="">temp d'ouverture</label>
+						</div>
+						<div class="input-data">
+							
+							<input type="time" name="temp_f" id='temp_f' required>
+							<div class="underline"></div>
+							<label for="">temp de fermeture</label>
+						</div>
+						<div class="input-data">
+							<div class="image">
+								
+								<input type="file" name="image" id="image" required>
+							
+								<label for="image">ajouter</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="input-data textarea">
+							<textarea rows="8" cols="80" name="description" id="description" required></textarea>
+							
+							<div class="underline"></div>
+							<label for="">description</label>
+
+							</div>
+										        						
+									<div style="position:relative">
+												<div class="inner"></div>
+												<input type="submit" value="submit" onclick="hide_pup()">
+										
+											</div>
+									
+							
+							</form>
+							
+						
+				</div>
+		
+			
+				
+
+			
+				
+			
 		</main>
+		
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
 	
+	<script>
+
+
+	</script>
 
 	<script src="script.js"></script>
 </body>
