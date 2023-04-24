@@ -75,13 +75,13 @@ switchMode.addEventListener('change', function () {
 	}
 })
 /********************Show functions*/
-let cinema = 0 , sport = 0 , theatre = 0 , music = 0 , livre = 0 , FormConcer =  0 ; 
+let cinema = 0 , sport = 0 , theatre = 0 , music = 0 , livre = 0 , FormConcer =  0 , formTheatre=0 ; 
 function showDivCenima() {
 	cinema ++ ; 
 
 	var divToShow = document.getElementById("cinma_event");
 	if(cinema % 2!=0) 
-	divToShow.style.display = "grid";
+	divToShow.style.display = "flex";
 	else
 	divToShow.style.display = "none"; 
 
@@ -124,6 +124,15 @@ function showDivCenima() {
 	FormConcer  ++ ; 
 	var divToShow = document.getElementById("concert");
 	if(FormConcer % 2 != 0 )
+	divToShow.style.display = "grid";
+	else
+	divToShow.style.display = "none";
+  }
+  function showFormtheatre()
+  {
+	formTheatre  ++ ; 
+	var divToShow = document.getElementById("theatre");
+	if(formTheatre % 2 != 0 )
 	divToShow.style.display = "grid";
 	else
 	divToShow.style.display = "none";
