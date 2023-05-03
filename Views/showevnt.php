@@ -1,8 +1,14 @@
 <?php
-include "../Controller/lieu_matchC.php";
 
+include '../Controller/lieu_matchC.php';
 $lieu_matchC = new lieu_matchC();
 $list_LM = $lieu_matchC->afficherlieu_match();
+?>
+<?php
+
+include '../Controller/MatchC.php';
+$matchC = new MatchC();
+$list_M = $matchC->affichermatch();
 ?>
 
 <!DOCTYPE html>
@@ -23,13 +29,6 @@ $list_LM = $lieu_matchC->afficherlieu_match();
 </head>
 
 <body>
-    <?php
-	include_once '../Controller/userc.php';
-	$userc = new Userc();
-	$admin = new Userc();
-	$list = $userc->listusers();
-	$list1 = $admin->listAdmin();
-	?>
 
 
     <!-- SIDEBAR -->
@@ -52,7 +51,7 @@ $list_LM = $lieu_matchC->afficherlieu_match();
                 </a>
             </li>
             <li class="active">
-                <a href="afficherlc.php">
+                <a href="showevnt.php">
                     <i class='bx bx-show'></i>
                     <span class="text">montrer l'événement</span>
                 </a>
@@ -193,7 +192,7 @@ $list_LM = $lieu_matchC->afficherlieu_match();
             <div class="table-data">
                 <div class="order">
                     <div class="head">
-                        <h3>liste des utlisateurs </h3>
+                        <h3>liste des lieux matchs </h3>
                         <form action="#" method="get">
                             <div class="form-input">
                                 <input type="search" placeholder="Search..."
@@ -215,7 +214,7 @@ $list_LM = $lieu_matchC->afficherlieu_match();
                                 <th>temp_F_T</th>
                                 <th>capacite</th>
                                 <th>adresse</th>
-                                <th>image</th>
+                                <th>Image</th>
                                 <th>description</th>
                             </tr>
                         </thead>
@@ -242,13 +241,15 @@ $list_LM = $lieu_matchC->afficherlieu_match();
                                 <td>
                                     <?= $lieu_match['adresse_M']; ?>
                                 </td>
-                                <td class="styleth"><img src="src/<?= $lieu_match['image_T']; ?>" height="60px" alt="image_T d'evenement"></td>
+                                <td>
+                                    <img src="src/<?= $lieu_match['image_T']; ?>" height="40px" alt="Image">
+                                </td>
                                 <td>
                                     <?= $lieu_match['description_M']; ?>
                                 </td>
 
                                 <td>
-                                    <a href="ajoutmatch.php?id_LM=<?= $lieu_match['id_LM']; ?>"><span
+                                    <a href="update_lieuM.php?id_LM=<?= $lieu_match['id_LM']; ?>"><span
                                             class="status completed">Update</span> </a>
                                 </td>
                                 <td>
@@ -265,6 +266,87 @@ $list_LM = $lieu_matchC->afficherlieu_match();
                 </div>
 
             </div>
+
+
+
+            <div class="table-data">
+                <div class="order">
+                    <div class="head">
+                        <h3>liste des matchs </h3>
+                        <form action="#" method="get">
+                            <div class="form-input">
+                                <input type="search" placeholder="Search..."
+                                    style="background: var(--light); border: none;">
+                                <button type="submit" class="search-btn"
+                                    style="background-color: transparent;  border: none;"><i
+                                        class='bx bx-search'></i></button>
+                            </div>
+                        </form>
+                        <i class='bx bx-filter'></i>
+
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>id_M </th>
+                                <th>nom_M</th>
+                                <th>nom_equipe1</th>
+                                <th>nom_equipe2</th>
+                                <th>durre</th>
+                                <th>type</th>
+                                <th>description</th>
+                                <th>image</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+							foreach ($list_M as $match) {
+								?>
+                            <tr>
+                                <td>
+                                    <?= $match['id_M']; ?>
+                                </td>
+                                <td>
+                                    <?= $match['nom_M']; ?>
+                                </td>
+                                <td>
+                                    <?= $match['nom_equipe1']; ?>
+                                </td>
+                                <td>
+                                    <?= $match['nom_equipe2']; ?>
+                                </td>
+                                <td>
+                                    <?= $match['duree_P']; ?>
+                                </td>
+                                <td>
+                                    <?= $match['type_P']; ?>
+                                </td>
+                                <td>
+                                    <?= $match['description_P']; ?>
+                                </td>
+                                <td>
+                                    <img src="src/<?= $match['image_P']; ?>" height="40px" alt="Image">
+                                </td>
+
+                                <td>
+                                    <a href="modifierM.php?id_M=<?= $match['id_M']; ?>"><span
+                                            class="status completed">Update</span> </a>
+                                </td>
+                                <td>
+                                    <a href="supprimerM.php?id_M=<?= $match['id_M']; ?>"><span
+                                            class="status pending">Delete</span> </a>
+                                </td>
+
+                            </tr>
+                            <?php
+							}
+							?>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
 
             <!--<div class="table-data">
                 <div class="order">
@@ -285,10 +367,10 @@ $list_LM = $lieu_matchC->afficherlieu_match();
                     <table>
                         <thead>
                             <tr>
-                                <th>id_LM </th>
-                                <th>nom_LM</th>
-                                <th>temp_O_LM</th>
-                                <th>temp_F_LM</th>
+                                <th>id_LC </th>
+                                <th>nom_LC</th>
+                                <th>temp_O_LC</th>
+                                <th>temp_F_LC</th>
                                 <th>capacite</th>
                                 <th>adresse</th>
                                 <th>description</th>
@@ -362,10 +444,10 @@ $list_LM = $lieu_matchC->afficherlieu_match();
             <!-- <table>
                         <thead>
                             <tr>
-                                <th>id_LM </th>
-                                <th>nom_LM</th>
-                                <th>temp_O_LM</th>
-                                <th>temp_F_LM</th>
+                                <th>id_LC </th>
+                                <th>nom_LC</th>
+                                <th>temp_O_LC</th>
+                                <th>temp_F_LC</th>
                                 <th>capacite</th>
                                 <th>adresse</th>
                                 <th>description</th>

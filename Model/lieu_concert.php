@@ -1,24 +1,24 @@
 <?php
-class lieu_match
+class lieu_concert
 {
-    private  $id_LM;
-    private  $nom_LM;
+    private  $id_LC;
+    private  $nom_LC;
     private  $adresse;
-    private  $temp_o;
-    private  $temp_f;
+    private  $temp_O_LC;
+    private  $temp_F_LC;
     private  $capacite;
-    private  $image_T;
+    private  $image;
     private  $description;
 
-    public function __construct($id_LM=null, $nom_LM=null, $temp_o = null, $temp_f = null,$capacite = null,$adresse=null , $image_T=null ,$description=null)
+    public function __construct($id_LC=null, $nom_LC=null,$adresse=null, $temp_O_LC = null, $temp_F_LC = null,$capacite = null , $image=null ,$description=null)
     {
-        $this->id_LM= $id_LM;
-        $this->nom_LM= $nom_LM;
+        $this->id_LC= $id_LC;
+        $this->nom_LC= $nom_LC;
         $this->adresse= $adresse;
-        $this->temp_o= $temp_o;
-        $this->temp_f= $temp_f;
+        $this->temp_O_LC= $temp_O_LC;
+        $this->temp_F_LC= $temp_F_LC;
         $this->capacite= $capacite;
-        $this->image_T= $image_T;
+        $this->image= $image;
         $this->description= $description;
 
 
@@ -27,15 +27,15 @@ class lieu_match
         echo '<table border=1 width="100%">
             <tr align="center">
                 <td>identifiant</td>
-                <td> nom_LM</td>
+                <td> nom_LC</td>
                 <td>description</td>
                 <td>duree</td>
                 <td>photo </td>
                 <td>type </td>
             </tr>
             <tr>
-                <td>'. $this->id_LM .'</td>
-                <td>'. $this->nom_LM .'</td>
+                <td>'. $this->id .'</td>
+                <td>'. $this->nom_LC .'</td>
                 <td>'. $this->description .'</td>
                 <td>'. $this->duree .'</td>
                 <td>'. $this->photo .'</td>
@@ -44,36 +44,36 @@ class lieu_match
             </tr>
         </table>';
     }*/
-    public function getid_LM()
+    public function getid_LC()
     {
-        return $this->id_LM;
+        return $this->id_LC;
     }
 
     /**
      *
      * @return  self
      */ 
-    public function setid_LM($id_LM)
+    public function setid_LC($id_LC)
     {
-        $this->id_LM = $id_LM;
+        $this->id_LC = $id_LC;
 
         return $this;
     }
 
     /**
      */ 
-    public function getnom_LM()
+    public function getnom_LC()
     {
-        return $this->nom_LM;
+        return $this->nom_LC;
     }
 
     /**
      *
      * @return  self
      */ 
-    public function setnom_LM($nom_LM)
+    public function setnom_LC($nom_LC)
     {
-        $this->nom_LM = $nom_LM;
+        $this->nom_LC = $nom_LC;
 
         return $this;
     }
@@ -98,36 +98,36 @@ class lieu_match
 
     /**
      */ 
-    public function gettemp_o()
+    public function gettemp_O_LC()
     {
-        return $this->temp_o;
+        return $this->temp_O_LC;
     }
 
     /**
      *
      * @return  self
      */ 
-    public function settemp_o($temp_o)
+    public function settemp_O_LC($temp_O_LC)
     {
-        $this->temp_o = $temp_o;
+        $this->temp_O_LC = $temp_O_LC;
 
         return $this;
     }
 
     /**
      */ 
-    public function gettemp_f()
+    public function gettemp_F_LC()
     {
-        return $this->temp_f;
+        return $this->temp_F_LC;
     }
 
     /**
      *
      * @return  self
      */ 
-    public function settemp_f($temp_f)
+    public function settemp_F_LC($temp_F_LC)
     {
-        $this->temp_f = $temp_f;
+        $this->temp_F_LC = $temp_F_LC;
 
         return $this;
     }
@@ -151,18 +151,18 @@ class lieu_match
     }
         /**
      */ 
-    public function getimage_T()
+    public function getimage()
     {
-        return $this->image_T;
+        return $this->image;
     }
 
     /**
      *
      * @return  self
      */ 
-    public function setimage_T($image_T)
+    public function setimage($image)
     {
-        $this->image_T = $image_T;
+        $this->image = $image;
 
         return $this;
     }

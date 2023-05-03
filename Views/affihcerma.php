@@ -1,8 +1,8 @@
 <?php
-include "../Controller/lieu_matchC.php";
+include "../Controller/match.php";
 
-$lieu_matchC = new lieu_matchC();
-$list_LM = $lieu_matchC->afficherlieu_match();
+$match = new matchM();
+$list_LM = $match->afficherlieu_match();
 ?>
 
 <!DOCTYPE html>
@@ -225,30 +225,30 @@ $list_LM = $lieu_matchC->afficherlieu_match();
 								?>
                             <tr>
                                 <td>
-                                    <?= $lieu_match['id_LM']; ?>
+                                    <?= $lieu_match['id_M']; ?>
                                 </td>
                                 <td>
-                                    <?= $lieu_match['nom_LM']; ?>
+                                    <?= $lieu_match['nom_M']; ?>
                                 </td>
                                 <td>
-                                    <?= $lieu_match['temp_O_T']; ?>
+                                    <?= $lieu_match['nom_equipe1']; ?>
                                 </td>
                                 <td>
-                                    <?= $lieu_match['temp_F_T']; ?>
+                                    <?= $lieu_match['nom_equipe2']; ?>
                                 </td>
                                 <td>
-                                    <?= $lieu_match['capacite_M']; ?>
+                                    <?= $lieu_match['duree_P']; ?>
                                 </td>
                                 <td>
-                                    <?= $lieu_match['adresse_M']; ?>
+                                    <?= $lieu_match['type_P']; ?>
                                 </td>
-                                <td class="styleth"><img src="src/<?= $lieu_match['image_T']; ?>" height="60px" alt="image_T d'evenement"></td>
+                                <td class="styleth"><img src="src/<?= $lieu_match['image_P']; ?>" height="60px" alt="image_T d'evenement"></td>
                                 <td>
-                                    <?= $lieu_match['description_M']; ?>
+                                    <?= $lieu_match['description_MA']; ?>
                                 </td>
 
                                 <td>
-                                    <a href="ajoutmatch.php?id_LM=<?= $lieu_match['id_LM']; ?>"><span
+                                    <a href="mofifirM.php?id_LM=<?= $lieu_match['id_M']; ?>"><span
                                             class="status completed">Update</span> </a>
                                 </td>
                                 <td>
